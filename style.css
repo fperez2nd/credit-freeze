@@ -1,0 +1,173 @@
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #17202b;
+  --muted: #5b6676;
+  --border: #e1e6ec;
+  --link: #1665c1;
+  --bar: #14304f;
+  --bar-text: #ffffff;
+  --hero: #e6f1f8;
+  --hero-icon: #2a8ec4;
+  --primary: #f2c230;
+  --primary-text: #17202b;
+  --dark: #17202b;
+  --dark-text: #ffffff;
+  --c1: #9e1b32;
+  --c2: #c1188b;
+  --c3: #00a6ca;
+  --apply: #fff6dc;
+  --apply-icon: #b8860b;
+  --child: #ecebfa;
+  --child-icon: #6a55b8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141a;
+    --surface: #18202a;
+    --text: #e6eaef;
+    --muted: #9aa5b3;
+    --border: #2a3440;
+    --link: #74b4ff;
+    --bar: #0a1a2c;
+    --bar-text: #e6eaef;
+    --hero: #152636;
+    --hero-icon: #5fb6e6;
+    --primary: #f2c230;
+    --primary-text: #17202b;
+    --dark: #e6eaef;
+    --dark-text: #0f141a;
+    --c1: #e5566b;
+    --c2: #e05bb8;
+    --c3: #00a6ca;
+    --apply: #2b2615;
+    --apply-icon: #e0b33a;
+    --child: #221f36;
+    --child-icon: #a593ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141a;
+  --surface: #18202a;
+  --text: #e6eaef;
+  --muted: #9aa5b3;
+  --border: #2a3440;
+  --link: #74b4ff;
+  --bar: #0a1a2c;
+  --bar-text: #e6eaef;
+  --hero: #152636;
+  --hero-icon: #5fb6e6;
+  --primary: #f2c230;
+  --primary-text: #17202b;
+  --dark: #e6eaef;
+  --dark-text: #0f141a;
+  --c1: #e5566b;
+  --c2: #e05bb8;
+  --c3: #00a6ca;
+  --apply: #2b2615;
+  --apply-icon: #e0b33a;
+  --child: #221f36;
+  --child-icon: #a593ea;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+h1, h2, h3 { line-height: 1.25; }
+p { margin: 0 0 10px; }
+a { color: var(--link); }
+.ico { width: 1.1em; height: 1.1em; vertical-align: -0.18em; margin-right: 6px; flex: none; }
+.topbar { background: var(--bar); color: var(--bar-text); }
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 52px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+.brand { font-weight: 700; letter-spacing: 0.02em; display: inline-flex; align-items: center; }
+.brand .ico { width: 1.3em; height: 1.3em; margin-right: 8px; color: var(--primary); }
+.hero { background: var(--hero); text-align: center; padding: 40px 0 44px; }
+.hero .wrap { max-width: 760px; }
+.hero-icon {
+  width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%;
+  background: var(--surface); color: var(--hero-icon);
+  display: grid; place-items: center; box-shadow: 0 4px 14px rgb(0 0 0 / 0.08);
+}
+.hero-icon svg { width: 34px; height: 34px; }
+.hero h1 { margin: 0 0 6px; font-size: clamp(1.6rem, 4vw, 2.3rem); }
+.hero .lead { font-size: 1.15rem; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
+.hero p:last-child { margin: 0; }
+main { padding-top: 32px; padding-bottom: 48px; display: grid; gap: 20px; }
+.bureaus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 820px) { .bureaus { grid-template-columns: minmax(0, 1fr); } }
+.card {
+  --accent: var(--c1);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--accent);
+  border-radius: 14px;
+  padding: 22px 20px 18px;
+  text-align: center;
+  display: flex; flex-direction: column;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.04);
+}
+.card.c2 { --accent: var(--c2); }
+.card.c3 { --accent: var(--c3); }
+.card h2 { margin: 0 0 10px; font-size: 1.45rem; color: var(--accent); }
+.card .start { font-size: 0.95rem; padding: 10px 12px; margin-bottom: 6px; border-radius: 10px; background: var(--bg); }
+.card .start a { font-weight: 600; }
+.card .domain { color: var(--muted); }
+.step { padding: 14px 0 4px; }
+.step + .step { border-top: 1px solid var(--border); }
+.step h3 { margin: 0 0 4px; font-size: 1.05rem; display: inline-flex; align-items: center; }
+.step h3 .ico { color: var(--accent); }
+.step p { font-size: 0.95rem; }
+.card .phone { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
+.card .phone .ico { color: var(--accent); }
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 4px auto 10px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.1s, filter 0.1s;
+}
+.btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn.primary { background: var(--primary); color: var(--primary-text); }
+.btn.dark { background: var(--dark); color: var(--dark-text); }
+.panel {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: start;
+  border-radius: 14px; padding: 22px 24px;
+}
+.panel h2 { margin: 2px 0 8px; font-size: 1.25rem; }
+.panel p:last-child { margin-bottom: 0; }
+.panel-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; }
+.panel-icon svg { width: 26px; height: 26px; }
+.p-apply { background: var(--apply); }
+.p-apply .panel-icon { color: var(--apply-icon); }
+.p-child { background: var(--child); }
+.p-child .panel-icon { color: var(--child-icon); }
+@media (max-width: 520px) { .panel { grid-template-columns: minmax(0, 1fr); } }
+.chips { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  text-decoration: none; font-weight: 600; font-size: 0.92rem;
+}
+.chips a:hover { border-color: var(--link); }
+.seg { display: inline-flex; }
+.seg button {
+  font: inherit; font-size: 0.82rem; padding: 5px 11px; cursor: pointer;
+  color: var(--bar-text); background: transparent; border: 1px solid rgb(255 255 255 / 0.35); border-radius: 0;
+}
+.seg button + button { border-left: 0; }
+.seg button:first-child { border-radius: 999px 0 0 999px; }
+.seg button:last-child { border-radius: 0 999px 999px 0; }
+.seg button:hover { background: rgb(255 255 255 / 0.1); }
+.seg button.on { background: var(--primary); border-color: var(--primary); color: var(--primary-text); }
