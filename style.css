@@ -160,7 +160,10 @@ main { padding-top: 32px; padding-bottom: 48px; display: grid; gap: 20px; }
   background: var(--surface); border: 1px solid var(--border);
   text-decoration: none; font-weight: 600; font-size: 0.92rem;
 }
-.chips a:hover { border-color: var(--link); }
+.chips .c1 a { color: var(--c1); }
+.chips .c2 a { color: var(--c2); }
+.chips .c3 a { color: var(--c3); }
+.chips a:hover { border-color: currentColor; }
 .seg { display: inline-flex; }
 .seg button {
   font: inherit; font-size: 0.82rem; padding: 5px 11px; cursor: pointer;
