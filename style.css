@@ -87,7 +87,7 @@ a { color: var(--link); }
 .topbar { background: var(--bar); color: var(--bar-text); }
 .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 52px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
 .brand { font-weight: 700; letter-spacing: 0.02em; display: inline-flex; align-items: center; }
-.brand .ico { width: 1.3em; height: 1.3em; margin-right: 8px; color: var(--hero-icon); }
+.brand .ico { width: 1.3em; height: 1.3em; margin-right: 8px; color: var(--primary); }
 .hero { background: var(--hero); text-align: center; padding: 40px 0 44px; }
 .hero .wrap { max-width: 760px; }
 .hero-icon {
